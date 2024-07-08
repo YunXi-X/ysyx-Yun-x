@@ -2,7 +2,7 @@
 # DESCRIPTION: Verilator output: Make include file with class lists
 #
 # This file lists generated Verilated files, for including in higher level makefiles.
-# See Vour_OnOff.mk for the caller.
+# See Vdec24.mk for the caller.
 
 ### Switches...
 # C11 constructs required?  0/1 (always on now)
@@ -23,24 +23,25 @@ VM_TRACE_FST = 0
 ### Object file lists...
 # Generated module classes, fast-path, compile with highest optimization
 VM_CLASSES_FAST += \
-	Vour_OnOff \
-	Vour_OnOff___024root__DepSet_he4849518__0 \
-	Vour_OnOff___024root__DepSet_hd6714a0a__0 \
+	Vdec24 \
+	Vdec24___024root__DepSet_h0b1b9ab2__0 \
+	Vdec24___024root__DepSet_h7cad9d5f__0 \
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
-	Vour_OnOff___024root__Slow \
-	Vour_OnOff___024root__DepSet_he4849518__0__Slow \
-	Vour_OnOff___024root__DepSet_hd6714a0a__0__Slow \
+	Vdec24__ConstPool_0 \
+	Vdec24___024root__Slow \
+	Vdec24___024root__DepSet_h0b1b9ab2__0__Slow \
+	Vdec24___024root__DepSet_h7cad9d5f__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \
-	Vour_OnOff__Trace__0 \
+	Vdec24__Trace__0 \
 
 # Generated support classes, non-fast-path, compile with low/medium optimization
 VM_SUPPORT_SLOW += \
-	Vour_OnOff__Syms \
-	Vour_OnOff__Trace__0__Slow \
+	Vdec24__Syms \
+	Vdec24__Trace__0__Slow \
 
 # Global classes, need linked once per executable, fast-path, compile with highest optimization
 VM_GLOBAL_FAST += \

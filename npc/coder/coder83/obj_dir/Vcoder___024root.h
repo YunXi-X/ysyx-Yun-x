@@ -1,22 +1,23 @@
 // Verilated -*- C++ -*-
 // DESCRIPTION: Verilator output: Design internal header
-// See Vour_OnOff.h for the primary calling header
+// See Vcoder.h for the primary calling header
 
-#ifndef VERILATED_VOUR_ONOFF___024ROOT_H_
-#define VERILATED_VOUR_ONOFF___024ROOT_H_  // guard
+#ifndef VERILATED_VCODER___024ROOT_H_
+#define VERILATED_VCODER___024ROOT_H_  // guard
 
 #include "verilated.h"
 
-class Vour_OnOff__Syms;
+class Vcoder__Syms;
 
-class Vour_OnOff___024root final : public VerilatedModule {
+class Vcoder___024root final : public VerilatedModule {
   public:
 
     // DESIGN SPECIFIC STATE
-    VL_IN8(a,0,0);
-    VL_IN8(b,0,0);
-    VL_OUT8(f,0,0);
+    VL_IN8(en,0,0);
+    VL_IN8(x,7,0);
+    VL_OUT8(y,2,0);
     CData/*0:0*/ __VactContinue;
+    IData/*31:0*/ coder__DOT__i;
     IData/*31:0*/ __VstlIterCount;
     IData/*31:0*/ __VicoIterCount;
     IData/*31:0*/ __VactIterCount;
@@ -26,12 +27,12 @@ class Vour_OnOff___024root final : public VerilatedModule {
     VlTriggerVec<0> __VnbaTriggered;
 
     // INTERNAL VARIABLES
-    Vour_OnOff__Syms* const vlSymsp;
+    Vcoder__Syms* const vlSymsp;
 
     // CONSTRUCTORS
-    Vour_OnOff___024root(Vour_OnOff__Syms* symsp, const char* v__name);
-    ~Vour_OnOff___024root();
-    VL_UNCOPYABLE(Vour_OnOff___024root);
+    Vcoder___024root(Vcoder__Syms* symsp, const char* v__name);
+    ~Vcoder___024root();
+    VL_UNCOPYABLE(Vcoder___024root);
 
     // INTERNAL METHODS
     void __Vconfigure(bool first);

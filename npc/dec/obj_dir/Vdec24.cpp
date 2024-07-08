@@ -1,34 +1,34 @@
 // Verilated -*- C++ -*-
 // DESCRIPTION: Verilator output: Model implementation (design independent parts)
 
-#include "Vour_OnOff.h"
-#include "Vour_OnOff__Syms.h"
+#include "Vdec24.h"
+#include "Vdec24__Syms.h"
 #include "verilated_vcd_c.h"
 
 //============================================================
 // Constructors
 
-Vour_OnOff::Vour_OnOff(VerilatedContext* _vcontextp__, const char* _vcname__)
+Vdec24::Vdec24(VerilatedContext* _vcontextp__, const char* _vcname__)
     : VerilatedModel{*_vcontextp__}
-    , vlSymsp{new Vour_OnOff__Syms(contextp(), _vcname__, this)}
-    , a{vlSymsp->TOP.a}
-    , b{vlSymsp->TOP.b}
-    , f{vlSymsp->TOP.f}
+    , vlSymsp{new Vdec24__Syms(contextp(), _vcname__, this)}
+    , en{vlSymsp->TOP.en}
+    , x{vlSymsp->TOP.x}
+    , y{vlSymsp->TOP.y}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context
     contextp()->addModel(this);
 }
 
-Vour_OnOff::Vour_OnOff(const char* _vcname__)
-    : Vour_OnOff(Verilated::threadContextp(), _vcname__)
+Vdec24::Vdec24(const char* _vcname__)
+    : Vdec24(Verilated::threadContextp(), _vcname__)
 {
 }
 
 //============================================================
 // Destructor
 
-Vour_OnOff::~Vour_OnOff() {
+Vdec24::~Vdec24() {
     delete vlSymsp;
 }
 
@@ -36,33 +36,33 @@ Vour_OnOff::~Vour_OnOff() {
 // Evaluation function
 
 #ifdef VL_DEBUG
-void Vour_OnOff___024root___eval_debug_assertions(Vour_OnOff___024root* vlSelf);
+void Vdec24___024root___eval_debug_assertions(Vdec24___024root* vlSelf);
 #endif  // VL_DEBUG
-void Vour_OnOff___024root___eval_static(Vour_OnOff___024root* vlSelf);
-void Vour_OnOff___024root___eval_initial(Vour_OnOff___024root* vlSelf);
-void Vour_OnOff___024root___eval_settle(Vour_OnOff___024root* vlSelf);
-void Vour_OnOff___024root___eval(Vour_OnOff___024root* vlSelf);
+void Vdec24___024root___eval_static(Vdec24___024root* vlSelf);
+void Vdec24___024root___eval_initial(Vdec24___024root* vlSelf);
+void Vdec24___024root___eval_settle(Vdec24___024root* vlSelf);
+void Vdec24___024root___eval(Vdec24___024root* vlSelf);
 
-void Vour_OnOff::eval_step() {
-    VL_DEBUG_IF(VL_DBG_MSGF("+++++TOP Evaluate Vour_OnOff::eval_step\n"); );
+void Vdec24::eval_step() {
+    VL_DEBUG_IF(VL_DBG_MSGF("+++++TOP Evaluate Vdec24::eval_step\n"); );
 #ifdef VL_DEBUG
     // Debug assertions
-    Vour_OnOff___024root___eval_debug_assertions(&(vlSymsp->TOP));
+    Vdec24___024root___eval_debug_assertions(&(vlSymsp->TOP));
 #endif  // VL_DEBUG
     vlSymsp->__Vm_activity = true;
     vlSymsp->__Vm_deleter.deleteAll();
     if (VL_UNLIKELY(!vlSymsp->__Vm_didInit)) {
         vlSymsp->__Vm_didInit = true;
         VL_DEBUG_IF(VL_DBG_MSGF("+ Initial\n"););
-        Vour_OnOff___024root___eval_static(&(vlSymsp->TOP));
-        Vour_OnOff___024root___eval_initial(&(vlSymsp->TOP));
-        Vour_OnOff___024root___eval_settle(&(vlSymsp->TOP));
+        Vdec24___024root___eval_static(&(vlSymsp->TOP));
+        Vdec24___024root___eval_initial(&(vlSymsp->TOP));
+        Vdec24___024root___eval_settle(&(vlSymsp->TOP));
     }
     // MTask 0 start
     VL_DEBUG_IF(VL_DBG_MSGF("MTask0 starting\n"););
     Verilated::mtaskId(0);
     VL_DEBUG_IF(VL_DBG_MSGF("+ Eval\n"););
-    Vour_OnOff___024root___eval(&(vlSymsp->TOP));
+    Vdec24___024root___eval(&(vlSymsp->TOP));
     // Evaluate cleanup
     Verilated::endOfThreadMTask(vlSymsp->__Vm_evalMsgQp);
     Verilated::endOfEval(vlSymsp->__Vm_evalMsgQp);
@@ -70,9 +70,9 @@ void Vour_OnOff::eval_step() {
 
 //============================================================
 // Events and timing
-bool Vour_OnOff::eventsPending() { return false; }
+bool Vdec24::eventsPending() { return false; }
 
-uint64_t Vour_OnOff::nextTimeSlot() {
+uint64_t Vdec24::nextTimeSlot() {
     VL_FATAL_MT(__FILE__, __LINE__, "", "%Error: No delays in the design");
     return 0;
 }
@@ -80,38 +80,38 @@ uint64_t Vour_OnOff::nextTimeSlot() {
 //============================================================
 // Utilities
 
-const char* Vour_OnOff::name() const {
+const char* Vdec24::name() const {
     return vlSymsp->name();
 }
 
 //============================================================
 // Invoke final blocks
 
-void Vour_OnOff___024root___eval_final(Vour_OnOff___024root* vlSelf);
+void Vdec24___024root___eval_final(Vdec24___024root* vlSelf);
 
-VL_ATTR_COLD void Vour_OnOff::final() {
-    Vour_OnOff___024root___eval_final(&(vlSymsp->TOP));
+VL_ATTR_COLD void Vdec24::final() {
+    Vdec24___024root___eval_final(&(vlSymsp->TOP));
 }
 
 //============================================================
 // Implementations of abstract methods from VerilatedModel
 
-const char* Vour_OnOff::hierName() const { return vlSymsp->name(); }
-const char* Vour_OnOff::modelName() const { return "Vour_OnOff"; }
-unsigned Vour_OnOff::threads() const { return 1; }
-std::unique_ptr<VerilatedTraceConfig> Vour_OnOff::traceConfig() const {
+const char* Vdec24::hierName() const { return vlSymsp->name(); }
+const char* Vdec24::modelName() const { return "Vdec24"; }
+unsigned Vdec24::threads() const { return 1; }
+std::unique_ptr<VerilatedTraceConfig> Vdec24::traceConfig() const {
     return std::unique_ptr<VerilatedTraceConfig>{new VerilatedTraceConfig{false, false, false}};
 };
 
 //============================================================
 // Trace configuration
 
-void Vour_OnOff___024root__trace_init_top(Vour_OnOff___024root* vlSelf, VerilatedVcd* tracep);
+void Vdec24___024root__trace_init_top(Vdec24___024root* vlSelf, VerilatedVcd* tracep);
 
 VL_ATTR_COLD static void trace_init(void* voidSelf, VerilatedVcd* tracep, uint32_t code) {
     // Callback from tracep->open()
-    Vour_OnOff___024root* const __restrict vlSelf VL_ATTR_UNUSED = static_cast<Vour_OnOff___024root*>(voidSelf);
-    Vour_OnOff__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    Vdec24___024root* const __restrict vlSelf VL_ATTR_UNUSED = static_cast<Vdec24___024root*>(voidSelf);
+    Vdec24__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     if (!vlSymsp->_vm_contextp__->calcUnusedSigs()) {
         VL_FATAL_MT(__FILE__, __LINE__, __FILE__,
             "Turning on wave traces requires Verilated::traceEverOn(true) call before time 0.");
@@ -119,19 +119,19 @@ VL_ATTR_COLD static void trace_init(void* voidSelf, VerilatedVcd* tracep, uint32
     vlSymsp->__Vm_baseCode = code;
     tracep->scopeEscape(' ');
     tracep->pushNamePrefix(std::string{vlSymsp->name()} + ' ');
-    Vour_OnOff___024root__trace_init_top(vlSelf, tracep);
+    Vdec24___024root__trace_init_top(vlSelf, tracep);
     tracep->popNamePrefix();
     tracep->scopeEscape('.');
 }
 
-VL_ATTR_COLD void Vour_OnOff___024root__trace_register(Vour_OnOff___024root* vlSelf, VerilatedVcd* tracep);
+VL_ATTR_COLD void Vdec24___024root__trace_register(Vdec24___024root* vlSelf, VerilatedVcd* tracep);
 
-VL_ATTR_COLD void Vour_OnOff::trace(VerilatedVcdC* tfp, int levels, int options) {
+VL_ATTR_COLD void Vdec24::trace(VerilatedVcdC* tfp, int levels, int options) {
     if (tfp->isOpen()) {
-        vl_fatal(__FILE__, __LINE__, __FILE__,"'Vour_OnOff::trace()' shall not be called after 'VerilatedVcdC::open()'.");
+        vl_fatal(__FILE__, __LINE__, __FILE__,"'Vdec24::trace()' shall not be called after 'VerilatedVcdC::open()'.");
     }
     if (false && levels && options) {}  // Prevent unused
     tfp->spTrace()->addModel(this);
     tfp->spTrace()->addInitCb(&trace_init, &(vlSymsp->TOP));
-    Vour_OnOff___024root__trace_register(&(vlSymsp->TOP), tfp->spTrace());
+    Vdec24___024root__trace_register(&(vlSymsp->TOP), tfp->spTrace());
 }
